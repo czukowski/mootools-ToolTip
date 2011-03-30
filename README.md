@@ -4,8 +4,7 @@ ToolTip
 This is yet another ToolTip class for MooTools 1.3
 
 It doesn't do any magic, but provides a few useful tools for integrating various widgets into tooltips. I'll give some examples
-below, which would be the best way to understand how it works, followed by API docs. Note, that the examples are not complete
-and may need some tweaking to use in your own application.
+below, which would be the best way to understand how it works, followed by API docs.
 
 Using ToolTip on its own
 ------------------------
@@ -19,7 +18,12 @@ Display &lt;abbr&gt; titles as tooltips:
 Using ToolTip with other widgets
 --------------------------------
 
-You may want to apply some matching CSS to these widgets to display them as tooltips.
+You may want to apply some matching CSS to these widgets to display them as tooltips. Also note, that these examples are not
+complete and may need some tweaking to use in your own application.
+
+The whole idea is to use widgets' own positioning functions (i.e. they position themselves) and add an arrow to them, that points
+to input or any other element of your choise. There may be a problem with draggable widgets, where arrow would not be moved with
+the element. The solution would be to hack into drag events to show hide and/or reposition the arrow.
 
 Use with [Christopher Beloch](http://mootools.net/forge/profile/C_BHole)'s [mooRainbow](http://mootools.net/forge/p/moorainbow)
 color picker and display it as tooltip:
