@@ -51,7 +51,7 @@ color picker and display it as tooltip:
 Use with [Arian Stolwijk](http://mootools.net/forge/profile/astolwijk)'s [DatePicker](http://mootools.net/forge/p/mootools_datepicker)
 plugin and display it as tooltip:
 
-![Screenshot 2](http://czukowski.github.com/mootools-ToolTip/colorpicker.png)
+![Screenshot 2](http://czukowski.github.com/mootools-ToolTip/datepicker.png)
 
 	var datePicker = new Picker.Date(element, options).attach([label, icon]);
 	datePicker.select(date);
