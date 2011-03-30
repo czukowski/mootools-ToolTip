@@ -1,3 +1,18 @@
+/*
+---
+description: This is yet another ToolTip class for MooTools 1.3. See README.md for details
+
+license: MIT-style
+
+authors:
+- Korney Czukowski
+
+requires: [Class, Options, Events, Element, Element.Event, Element.Position, Element.Shortcuts]
+
+provides: [ToolTip, Request.ToolTip]
+
+...
+*/
 var ToolTip = new Class({
 	Implements: [Events, Options],
 	Binds: ['hide'],
@@ -164,7 +179,9 @@ var ToolTip = new Class({
 		return toolTip;
 	}
 });
-
+/**
+ * Experimental; shows tooltip while executing XHR
+ */
 Request.ToolTip = new Class({
 	Extends: Request,
 	options: {

@@ -4,7 +4,7 @@ ToolTip
 This is yet another ToolTip class for MooTools 1.3
 
 It doesn't do any magic, but provides a few useful tools for integrating various widgets into tooltips. I'll give some examples
-below, which would be the best way to understand how it works, followed by API docs.
+below, which would be the best way to show the most convenient usage, followed by API docs.
 
 Using ToolTip on its own
 ------------------------
