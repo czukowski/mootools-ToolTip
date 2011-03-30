@@ -1,6 +1,8 @@
 ToolTip
 =======
 
+![Screenshot](http://czukowski.github.com/mootools-ToolTip/icon.png)
+
 This is yet another ToolTip class for MooTools 1.3
 
 It doesn't do any magic, but provides a few useful tools for integrating various widgets into tooltips. I'll give some examples
@@ -28,6 +30,8 @@ the element. The solution would be to hack into drag events to show hide and/or 
 Use with [Christopher Beloch](http://mootools.net/forge/profile/C_BHole)'s [mooRainbow](http://mootools.net/forge/p/moorainbow)
 color picker and display it as tooltip:
 
+![Screenshot 1](http://czukowski.github.com/mootools-ToolTip/colorpicker.png)
+
 	var colorPicker = new MooRainbow(element, options);
 	colorPicker.arrow = ToolTip.arrow({
 		'relativeTo': colorPicker.layout.getElement('div[class$="box"]'),
@@ -46,6 +50,8 @@ color picker and display it as tooltip:
 
 Use with [Arian Stolwijk](http://mootools.net/forge/profile/astolwijk)'s [DatePicker](http://mootools.net/forge/p/mootools_datepicker)
 plugin and display it as tooltip:
+
+![Screenshot 2](http://czukowski.github.com/mootools-ToolTip/colorpicker.png)
 
 	var datePicker = new Picker.Date(element, options).attach([label, icon]);
 	datePicker.select(date);
