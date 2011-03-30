@@ -70,17 +70,22 @@ var ToolTip = new Class({
 		this.position();
 	},
 	show: function() {
-		this.element.set('data-tooltip-displayed', true);
-		if ( ! this.options.autohide) {
-			new Element('div.close[title="'+Locale.get('Lustr.tooltip.close')+'"]').inject(this.toolTip, 'top').addEvent('click', this.hide);
+		if ( ! this.element.get('data-tooltip-displayed')) {
+			this.element.set('data-tooltip-displayed', true);
+			if ( ! this.options.autohide) {
+				new Element('div.close[title="'+Locale.get('Lustr.tooltip.close')+'"]').inject(this.toolTip, 'top').addEvent('click', this.hide);
+			}
+			this.position();
+			this.toolTip.show();
+			this.arrow.show();
+			this.fireEvent('show');
 		}
-		this.position();
-		this.toolTip.show();
-		this.arrow.show();
-		this.fireEvent('show');
 		return this;
 	}
 }).extend({
+	/**
+	 * Tooltip arrow factory
+	 */
 	arrow: function(options, tooltipElement) {
 		options = Object.merge({
 			distance: 12,
@@ -114,6 +119,9 @@ var ToolTip = new Class({
 		};
 		return element;
 	},
+	/**
+	 * Returns tooptip arrow position options
+	 */
 	arrowPosition: function(options) {
 		var edges = {
 			'bottom': {'dim': 'y', 'edge': 'top'},
