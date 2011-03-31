@@ -17,6 +17,36 @@ Display &lt;abbr&gt; titles as tooltips:
 		ToolTip.instance(this, this.get('title')).show();
 	});
 
+Display an _Element_ as tooltip content; including an option to prevent tooltip autohide:
+
+    ToolTip.instance(document.id('input#site-url'), {autohide: false}, new Element('div').adopt(
+        document.newTextNode('Enter your site '),
+        new Element('abbr[html="URL"][title="Uniform Resource Locator"]'),
+        document.newTextNode(' here')
+    )).show();
+
+Display tooltip to show _Request_ progress:
+
+    var toolTip = ToolTip.instance(document.id('button#submit-form'), {autohide: false});
+    new Request({
+        data: data,
+        onFailure: function() {
+            toolTip.set('Oops, something\'s happened, your data were not saved').show();
+        },
+        onRequest: function() {
+            toolTip.set(new Element('p').adopt(
+                document.newTextNode('Your data are being sent to server, please be patinet'),
+                new Element('br'),
+                new Element('img[alt="Progress bar"][src="progress.gif"])
+            )).show();
+        },
+        onSuccess: function() {
+            toolTip.options.autohide = true;
+            toolTip.set('Your data have been saved').show();
+        },
+        url: url
+    }).send();
+
 Using ToolTip with other widgets
 --------------------------------
 
