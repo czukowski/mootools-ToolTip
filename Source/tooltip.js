@@ -1,16 +1,13 @@
 /*
 ---
 description: This is yet another ToolTip class for MooTools 1.3. See README.md for details
-
 license: MIT-style
-
 authors:
-- Korney Czukowski
-
-requires: [Class, Options, Events, Element, Element.Event, Element.Position, Element.Shortcuts]
-
+ - Korney Czukowski
+requires:
+ - core/1.3: [Class, Options, Events, Element, Element.Event]
+ - more/1.3: [Element.Position, Element.Shortcuts]
 provides: [ToolTip, Request.ToolTip]
-
 ...
 */
 var ToolTip = new Class({

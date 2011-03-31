@@ -1,8 +1,6 @@
 name: ToolTip
-author: czukowski
+author: Korney Czukowski
 current: 1.0
 category: Interface
 tags: [Tooltip, Arrow]
-
-sources:
-  - "Source/ToolTip.js"
+sources: ['Source/ToolTip.js']
