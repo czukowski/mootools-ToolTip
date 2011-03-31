@@ -48,7 +48,7 @@ var ToolTip = new Class({
 					if (this.options.autohide) window.clearTimeout(this.timer);
 				}.bind(this),
 				'mouseleave': function() {
-					if (this.options.autohide) this.timer = this.hide.delay(this.options.hideDelay);
+					if (this.options.autohide) this.timer = this.hide.delay(this.options.hideDelay, this);
 				}.bind(this)
 			});
 		}, this);
@@ -158,7 +158,7 @@ var ToolTip = new Class({
 		var element = arguments[0],
 		    param = ['string', 'element'].contains(typeOf(arguments[1])),
 			content = param ? arguments[1] : (arguments[2] || null),
-			options = param ? arguments[2] : (arguments[1] || {});
+			options = param ? (arguments[2] || {}) : arguments[1];
 		if (typeOf(current = document.retrieve('ToolTip.current')) == 'object') {
 			current.hide();
 		}
