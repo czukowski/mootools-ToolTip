@@ -8,8 +8,10 @@ This is yet another ToolTip class for MooTools 1.3
 It doesn't do any magic, but provides a few useful tools for integrating various widgets into tooltips. I'll give some examples
 below, which would be the best way to show the most convenient usage, followed by API docs.
 
-How to Use ToolTip on its own
------------------------------
+How to Use
+----------
+
+### Using ToolTip on its own
 
 Display &lt;abbr&gt; titles as tooltips:
 
@@ -47,8 +49,7 @@ Display tooltip to show _Request_ progress:
         url: url
     }).send();
 
-How to Use ToolTip with other widgets
--------------------------------------
+### Using ToolTip with other widgets
 
 You may want to apply some matching CSS to these widgets to display them as tooltips. Also note, that these examples are not
 complete and may need some tweaking to use in your own application.
