@@ -26,7 +26,7 @@
 		<h1>
 			<a href="http://github.com/czukowski/mootools-ToolTip">mootools-ToolTip</a>
 		</h1>
-		<h2>Demo</h2>
+		<h2>Demo 1</h2>
 		<p>
 			The following paragraph has some &lt;abbr&gt; tags in it, that show tooltips with its title text, when clicked.
 		</p>
@@ -47,6 +47,7 @@
 			});
 		});
 		</script>
+		<h2>Demo 2</h2>
 		<p>
 			You can also have ToolTip display any Element. <a href="javascript:;" id="demo2">Click here</a> to perform. This example also
 			won't autoclose.
@@ -75,32 +76,33 @@
 			});
 		});
 		</script>
+		<h2>Demo 3</h2>
 		<p>
 			<a href="javascript:;" id="demo3">Click here</a> to load a totally random image I've googled up.
 		</p>
+		<p>Code:</p>
+		<pre><code>document.id('demo3').addEvent('click', function() {
+	var toolTip = ToolTip.instance(document.id('demo3'), 'Image is loading...', {
+		autohide: false
+	}).show();
+	new Asset.image('http://i.telegraph.co.uk/multimedia/archive/01356/random-crayons_1356872i.jpg', {
+		onLoad: function() {
+			// 'this' is an img element created by Asset.image
+			toolTip.set(this).show();
+		}
+	});
+});</code></pre>
 		<script type="text/javascript">
 		window.addEvent('domready', function() {
-			var toolTip = ToolTip.instance(document.id('button#submit-form'), {autohide: false});
-			new Asset.image('http://i.telegraph.co.uk/multimedia/archive/01356/random-crayons_1356872i.jpg')
-			
-			new Request({
-			    data: data,
-			    onFailure: function() {
-			        toolTip.set('Oops, something\'s happened, your data were not saved').show();
-			    },
-			    onRequest: function() {
-			        toolTip.set(new Element('p').adopt(
-			            document.newTextNode('Your data are being sent to server, please be patinet'),
-			            new Element('br'),
-			            new Element('img[alt="Progress bar"][src="progress.gif"])
-			        )).show();
-			    },
-			    onSuccess: function() {
-			        toolTip.options.autohide = true;
-			        toolTip.set('Your data have been saved').show();
-			    },
-			    url: url
-			}).send();
+			document.id('demo3').addEvent('click', function() {
+				var toolTip = ToolTip.instance(document.id('demo3'), 'Image is loading...', {autohide: false}).show();
+				new Asset.image('http://i.telegraph.co.uk/multimedia/archive/01356/random-crayons_1356872i.jpg', {
+					onLoad: function() {
+						// 'this' is an img element created by Asset.image
+						toolTip.set(this).show();
+					}
+				});
+			});
 		});
 		</script>
 	</div>
