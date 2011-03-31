@@ -85,7 +85,7 @@ var ToolTip = new Class({
 		if ( ! this.element.get('data-tooltip-displayed')) {
 			this.element.set('data-tooltip-displayed', true);
 			if ( ! this.options.autohide) {
-				new Element('div.close[title="'+Locale.get('Lustr.tooltip.close')+'"]').inject(this.toolTip, 'top').addEvent('click', this.hide);
+				new Element('div.close[title="'+(Locale.get('ToolTip.close') || 'Close')+'"]').inject(this.toolTip, 'top').addEvent('click', this.hide);
 			}
 			this.position();
 			this.toolTip.show();

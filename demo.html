@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset='utf-8'>
+	<meta charset="utf-8">
 	<title>Demo of czukowski/mootools-ToolTip @ GitHub</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="ToolTip.css" />
@@ -17,10 +17,10 @@
 	<div id="container">
 		<div class="download">
 			<a href="http://github.com/czukowski/mootools-ToolTip/zipball/master">
-				<img border="0" width="90" src="http://github.com/images/modules/download/zip.png">
+				<img width="90" src="http://github.com/images/modules/download/zip.png">
 			</a>
 			<a href="http://github.com/czukowski/mootools-ToolTip/tarball/master">
-				<img border="0" width="90" src="http://github.com/images/modules/download/tar.png">
+				<img width="90" src="http://github.com/images/modules/download/tar.png">
 			</a>
 		</div>
 		<h1>
@@ -28,13 +28,18 @@
 		</h1>
 		<h2>Demo</h2>
 		<p>
-			The following paragraph has some &lt;abbr&gt; tags in it, that show tooltips when clicked.
+			The following paragraph has some &lt;abbr&gt; tags in it, that show tooltips with its title text, when clicked.
 		</p>
 		<p id="demo1">
 			In computing, a <abbr title="Uniform Resource Locator">URL</abbr> is a <abbr title="Uniform Resource Identifier">URI</abbr> that specifies
 			where an identified resource is available and the mechanism for retrieving it.<br/>
-			<em>Source: <abbr title="http://en.wikipedia.org/wiki/Url">Wikipedia</abbr>
+			<em>Source: <abbr title="http://en.wikipedia.org/wiki/Url">Wikipedia</abbr></em>
 		</p>
+		<p>Code:</p>
+		<pre><code>document.id('demo1').getElements('abbr[title]').addEvent('click', function() {
+	ToolTip.instance(this, this.get('title')).show();
+});
+</code></pre>
 		<script type="text/javascript">
 		window.addEvent('domready', function() {
 			document.id('demo1').getElements('abbr[title]').addEvent('click', function() {
@@ -42,5 +47,19 @@
 			});
 		});
 		</script>
+		<p>You can also have ToolTip display any Element. <a href="javascript:;" id="demo2">Click here</a> to perform.</p>
+		<script type="text/javascript">
+		window.addEvent('domready', function() {
+			document.id('demo2').addEvent('click', function() {
+				ToolTip.instance(this, {autohide: false}, new Element('div').adopt(
+					new Element('em[html="GitHub allows you to download projects in the following formats:"]'),
+					new Element('br'),
+					new Element('img[src="http://github.com/images/modules/download/zip.png"][alt="ZIP"]'),
+					new Element('img[src="http://github.com/images/modules/download/tar.png"][alt="TAR"]')
+				)).show();
+			});
+		});
+		</script>
+	</div>
 </body>
 </html>
