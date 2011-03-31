@@ -6,7 +6,7 @@ authors:
  - Korney Czukowski
 requires:
  - core/1.3: [Class, Options, Events, Element, Element.Event]
- - more/1.3: [Element.Position, Element.Shortcuts]
+ - more/1.3: [Element.Position, Element.Shortcuts, Locale]
 provides: [ToolTip, Request.ToolTip]
 ...
 */
