@@ -1,0 +1,62 @@
+/**
+ * CSS arrows Based on Jon Rohan's post Creating Triangles in CSS
+ * @see http://www.dinnermint.org/css/creating-triangles-in-css/
+ */
+.css-arrow-left {
+	border-color: transparent #000 transparent transparent;
+	border-style: solid;
+	border-width: 10px 20px 10px 0;
+	height: 0;
+	margin: 10px 0;
+	width: 0;
+}
+.css-arrow-down {
+	border-color: #000 transparent transparent;
+	border-style: solid;
+	border-width: 20px 20px 0;
+	height: 0;
+	margin: 0 10px;
+	width: 0;
+}
+.css-arrow-up {
+	border-color: transparent transparent #000;
+	border-style: solid;
+	border-width: 0 20px 20px;
+	height: 0;
+	margin: 0 10px;
+	width: 0;
+}
+.css-arrow-right {
+	border-color: transparent transparent transparent #000;
+	border-style: solid;
+	border-width: 10px 0 10px 20px;
+	height: 0;
+	margin: 10px 0;
+	width: 0;
+}
+.tooltip {
+	background: #000;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px rgba(0,0,0,.3);
+	color: #fff;
+	max-width: 500px;
+	padding: 5px 8px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 2px 2px 10px rgba(0,0,0,.3);
+	-webkit-box-shadow: 2px 2px 10px rgba(0,0,0,.3);
+}
+.tooltip a {
+	color: #fff;
+}
+.tooltip div.close {
+	background: url(tooltip-close.png) no-repeat;
+	border: 1px solid #000;
+	float: right;
+	height: 6px;
+	margin-left: 5px;
+	width: 7px;
+}
+.tooltip div.close:hover {
+	border-style: outset;
+}
