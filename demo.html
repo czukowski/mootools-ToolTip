@@ -51,11 +51,11 @@
 		<script type="text/javascript">
 		window.addEvent('domready', function() {
 			document.id('demo2').addEvent('click', function() {
-				ToolTip.instance(this, {autohide: false}, new Element('div').adopt(
+				ToolTip.instance(this, {autohide: false, position: {position: 'centerRight', edge: 'left'}}, new Element('div').adopt(
 					new Element('em[html="GitHub allows you to download projects in the following formats:"]'),
 					new Element('br'),
-					new Element('img[src="http://github.com/images/modules/download/zip.png"][alt="ZIP"]'),
-					new Element('img[src="http://github.com/images/modules/download/tar.png"][alt="TAR"]')
+					new Element('img[src="http://github.com/images/modules/download/zip.png"][alt="ZIP"][width=144][height=142]'),
+					new Element('img[src="http://github.com/images/modules/download/tar.png"][alt="TAR"][width=144][height=142]')
 				)).show();
 			});
 		});

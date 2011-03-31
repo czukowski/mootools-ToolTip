@@ -79,14 +79,16 @@ var ToolTip = new Class({
 		else {
 			this.toolTip.set('html', content);
 		}
+		if ( ! this.options.autohide) {
+			new Element('div.close[title="'+(Locale.get('ToolTip.close') || 'Close')+'"]')
+				.inject(this.toolTip, 'top')
+				.addEvent('click', this.hide.bind(this));
+		}
 		this.position();
 	},
 	show: function() {
 		if ( ! this.element.get('data-tooltip-displayed')) {
 			this.element.set('data-tooltip-displayed', true);
-			if ( ! this.options.autohide) {
-				new Element('div.close[title="'+(Locale.get('ToolTip.close') || 'Close')+'"]').inject(this.toolTip, 'top').addEvent('click', this.hide);
-			}
 			this.position();
 			this.toolTip.show();
 			this.arrow.show();
