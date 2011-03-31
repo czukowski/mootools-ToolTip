@@ -1,6 +1,6 @@
 name: ToolTip
 author: czukowski
-current: 1.0
+current: 1.02
 category: Interface
 tags: [Tooltip, Arrow]
 sources: ['Source/ToolTip.js']
