@@ -1,6 +1,7 @@
 name: ToolTip
 author: czukowski
-current: 1.01
 category: Interface
 tags: [Tooltip, Arrow]
 sources: ['Source/ToolTip.js']
+demo: http://czukowski.github.com/mootools-ToolTip/demo.html
+docs: https://github.com/czukowski/mootools-ToolTip/blob/master/README.md
