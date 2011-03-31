@@ -186,7 +186,7 @@ Request.ToolTip = new Class({
 	options: {
 		anchor: null,
 		link: 'cancel',
-		localePrefix: 'Lustr.xhr.default',
+		localePrefix: 'ToolTip',
 		method: 'post'
 	},
 	initialize: function(options) {
@@ -197,16 +197,16 @@ Request.ToolTip = new Class({
 		this.addEvents({
 			'failure': function(xhr) {
 				var content = new Element('div').adopt(
-					new Element('span[html="'+Locale.get(this.options.localePrefix+'.failed')+'. "]'),
-					new Element('a[href="javascript:;"][html="'+Locale.get('Lustr.xhr.retry')+'"]')
+					new Element('span[html="'+(Locale.get(this.options.localePrefix+'.failed') || 'Your request could not complete')+'. "]'),
+					new Element('a[href="javascript:;"][html="'+(Locale.get('ToolTip.retry') || 'Try again')+'"]')
 						.addEvent('click', this.send.bind(this)),
 					new Element('br'),
-					new Element('span[html="'+Locale.get('Lustr.xhr.status').substitute(xhr)+'"]')
+					new Element('span[html="'+(Locale.get('ToolTip.status') || 'Server replied: {status} {statusText}').substitute(xhr)+'"]')
 				);
 				ToolTip.instance(this.options.anchor, {autohide: false}, content).show();
 			},
 			'request': function() {
-				var content = new Element('div.progress[html="'+Locale.get(this.options.localePrefix+'.updating')+'&hellip;"]');
+				var content = new Element('div.progress[html="'+(Locale.get(this.options.localePrefix+'.updating') || 'Your request is being processed')+'&hellip;"]');
 				ToolTip.instance(this.options.anchor, {autohide: false}, content).show();
 			},
 			'success': function(text) {
@@ -216,7 +216,7 @@ Request.ToolTip = new Class({
 					});
 					text = json.message;
 				}
-				ToolTip.instance(this.options.anchor, {autohide: true}, text || Locale.get(this.options.localePrefix+'.success')).show();
+				ToolTip.instance(this.options.anchor, {autohide: true}, text || (Locale.get(this.options.localePrefix+'.success') || 'Your request has completed')).show();
 				this.fireEvent('mouseleave');
 			}
 		});
