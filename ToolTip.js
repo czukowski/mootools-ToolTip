@@ -143,12 +143,28 @@ var ToolTip = new Class({
 			'left': {'dim': 'x', 'edge': 'right'},
 			'right': {'dim': 'x', 'edge': 'left'}
 		};
-		return Object.merge(Object.clone(options), {
+		var arrowOptions = Object.merge(Object.clone(options), {
 			distance: options.offset[edges[options.edge].dim].abs(),
 			edge: edges[options.edge].edge,
 			offset: {x: 0, y: 0},
-			position: options.position.replace(new RegExp(edges[options.edge].edge, 'i'), options.edge)
 		});
+		arrowOptions.position = ToolTip.getCoordinateFromValue(arrowOptions.position);
+		arrowOptions.position[edges[options.edge].dim] = options.edge;
+		return arrowOptions;
+	},
+	/**
+	 * From Element.Position
+	 * @see https://mootools.lighthouseapp.com/projects/24057/tickets/556-expose-some-static-methods-of-elementposition
+	 */
+	getCoordinateFromValue: function(option) {
+		if (typeOf(option) != 'string') return option;
+		option = option.toLowerCase();
+		return {
+			x: option.test('left') ? 'left'
+				: (option.test('right') ? 'right' : 'center'),
+			y: option.test(/upper|top/) ? 'top'
+				: (option.test('bottom') ? 'bottom' : 'center')
+		};
 	},
 	/**
 	 * Tooltip instance getter
