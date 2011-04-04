@@ -164,7 +164,7 @@ colorPicker.addEvents({
 				'relativeTo': colorPicker.layout.getElement('div[class$="box"]').addClass('tooltip'),
 				'position': 'topLeft',
 				'edge': 'right',
-				'offset': {y: 16}
+				'offset': {'y': 16}
 			});
 			colorPicker.addEvents({
 				'hide': function() {
@@ -194,20 +194,20 @@ colorPicker.addEvents({
 var element = document.id('demo5-control');
 var date = input.get('value') ? Date.parse(input.get('value')) : new Date();
 var datePicker = new Picker.Date(element, {
-	"draggable": false,
-	"pickerClass": "datepicker-lustr tooltip",
-	"pickerPosition": "topRight",
-	"positionOffset": {"x":11,"y":-5},
-	"startView": "days",
-	"timePicker": true,
-	"useFadeInOut": false
+	'draggable': false,
+	'pickerClass': 'datepicker-lustr tooltip',
+	'pickerPosition': 'topRight',
+	'positionOffset': {'x':11,'y':-5},
+	'startView': 'days',
+	'timePicker': true,
+	'useFadeInOut': false
 }).attach(element.getElements('span'));
 datePicker.select(date);
 datePicker.arrow = ToolTip.arrow({
 	'relativeTo': datePicker.picker,
 	'position': 'topLeft',
 	'edge': 'right',
-	'offset': {y: 16}
+	'offset': {'y': 16}
 });
 datePicker.addEvents({
 	'show': function() {
@@ -228,20 +228,20 @@ datePicker.addEvents({
 			var element = document.id('demo5-control');
 			var date = input.get('value') ? Date.parse(input.get('value')) : new Date();
 			var datePicker = new Picker.Date(element, {
-				"draggable": false,
-				"pickerClass": "datepicker-lustr tooltip",
-				"pickerPosition": "topRight",
-				"positionOffset": {"x":11,"y":-5},
-				"startView": "days",
-				"timePicker": true,
-				"useFadeInOut": false
+				'draggable': false,
+				'pickerClass': 'datepicker-lustr tooltip',
+				'pickerPosition': 'topRight',
+				'positionOffset': {'x':11,'y':-5},
+				'startView': 'days',
+				'timePicker': true,
+				'useFadeInOut': false
 			}).attach(element.getElements('span'));
 			datePicker.select(date);
 			datePicker.arrow = ToolTip.arrow({
 				'relativeTo': datePicker.picker,
 				'position': 'topLeft',
 				'edge': 'right',
-				'offset': {y: 16}
+				'offset': {'y': 16}
 			});
 			datePicker.addEvents({
 				'show': function() {
