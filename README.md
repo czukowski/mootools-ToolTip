@@ -53,7 +53,7 @@ Display tooltip to show _Request_ progress:
 
 You may want to apply some matching CSS to these widgets to display them as tooltips. Also note, that these examples are not
 complete and may need some tweaking to use in your own application. On the other hand, you can see live demo on ToolTip's
-[demo page](http://czukowski.github.com/mootools-ToolTip/index.html).
+[demo page](http://czukowski.github.com/mootools-ToolTip/demo.html).
 
 The whole idea is to use widgets' own positioning functions (i.e. they position themselves) and add an arrow to them, that points
 to input or any other element of your choise. There may be a problem with draggable widgets, where arrow would not be moved with
