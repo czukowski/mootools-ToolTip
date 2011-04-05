@@ -121,6 +121,7 @@ Accepted parameters:
    - `autohide`: _boolean_, hides tooltip after mouse pointer is away from tooltip and its owner element for over `hideDelay` ms; default: true,
    - `offset`: _number_, defines how far away is the tooltip from its owner element; default: 12,
    - `hideDelay`: _number_, delay until tooltip is hidden; default: 1000,
+   - `parseURLs`: _boolean_, automatically parse URLs and make them links in `ToolTip.set(string)` calls
    - `position`: _object_, similar options as for [Element.position](http://mootools.net/docs/more/Element/Element.Position#Element:position):
      - `edge`: _string_, default: 'bottom',
      - `position`: _string_, default: 'centerTop',
@@ -143,7 +144,8 @@ Fires, when tooltip was hidden.
 
 #### set()
 
-Sets tooltip content. Accepts _string_ or _Element_ as a parameter. Calls `position()` afterwards.
+Sets tooltip content. Accepts _string_ or _Element_ as a parameter. Calls `position()` afterwards. If a parameter is _string_
+and `parseURLs` option is enabled, the URLs in text will be converted to links.
 
 #### show()
 
@@ -185,3 +187,9 @@ Accepted parameters:
 
 Returns default arrow position from position options of toolip element. It actually calculates `distance` parameter from position
 offset, resets offsets and inverts `edge` and `position` parameters.
+
+#### ToolTip.parseLinks()
+
+Converts text email addresses and anchors into links. Existing links will not be altered. This function has been ported from
+[Kohana Framework](/3.1/guide/api/Text#auto_link) (see http://kohanaframework.org/3.1/guide/api/Text#auto_link) and hopefully
+RegEx are still working properly after being poprted to Javascript.
