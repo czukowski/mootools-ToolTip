@@ -191,5 +191,5 @@ offset, resets offsets and inverts `edge` and `position` parameters.
 #### ToolTip.parseLinks()
 
 Converts text email addresses and anchors into links. Existing links will not be altered. This function has been ported from
-[Kohana Framework](/3.1/guide/api/Text#auto_link) (see http://kohanaframework.org/3.1/guide/api/Text#auto_link) and hopefully
-RegEx are still working properly after being poprted to Javascript.
+[Kohana Framework](/3.1/guide/api/Text#auto_link) (see [Text::auto_link()](http://kohanaframework.org/3.1/guide/api/Text#auto_link))
+and hopefully RegEx are still working properly after being ported to Javascript.
