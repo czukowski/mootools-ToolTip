@@ -178,7 +178,7 @@ var ToolTip = new Class({
 	 */
 	instance: function() {
 		var element = arguments[0],
-		    param = ['string', 'element'].contains(typeOf(arguments[1])),
+			param = ['string', 'element'].contains(typeOf(arguments[1])),
 			content = param ? arguments[1] : (arguments[2] || null),
 			options = param ? (arguments[2] || {}) : arguments[1];
 		if (typeOf(current = document.retrieve('ToolTip.current')) == 'object') {
@@ -212,7 +212,7 @@ var ToolTip = new Class({
 		text = text.replace(/\b\b(:\/\/|">)?www(?:\.[a-z0-9][-a-z0-9]*)+\.[a-z]{2,6}\b/i, function($0, $1) {
 			return $1 ? $0 : '<a href="http://'+$0+'">'+$0+'</a>';
 		});
-	    // Find and replace all email addresses that are not part of an existing html mailto anchor
+		// Find and replace all email addresses that are not part of an existing html mailto anchor
 		text = text.replace(/\b(href=["']?mailto:|58;)?(?!\.)[-+_a-z0-9.]+(\.)?@(?![-.])[-a-z0-9.]+(\.)?\.[a-z]{2,6}\b(?!<\/a>)/i, function($0, $1) {
 			return $1 ? $0 : '<a href="mailto:'+$0+'">'+$0+'</a>';
 		});
