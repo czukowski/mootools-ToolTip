@@ -205,7 +205,7 @@ var ToolTip = new Class({
 	 */
 	parseLinks: function(text) {
 		// Find and replace all http/https/ftp/ftps links that are not part of an existing html anchor
-		text = text.replace(/\b(href="|">)?(?:ht|f)tps?:\/\/\S+(?:\/|\b)/i, function($0, $1) {
+		text = text.replace(/\b(href="|">)?(?:ht|f)tps?:\/\/[^<\s]+(?:\/|\b)/i, function($0, $1) {
 			return $1 ? $0 : '<a href="'+$0+'">'+$0+'</a>';
 		});
 		// Find and replace all naked www.links.com (without http://)
